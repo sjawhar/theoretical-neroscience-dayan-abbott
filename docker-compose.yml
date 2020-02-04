@@ -1,0 +1,17 @@
+version: '3'
+services:
+  notebook:
+    build: .
+    image: sjawhar/octave-notebook
+    container_name: comp-neuro
+    volumes:
+      - ./notebooks:/home/jovyan/work/notebooks
+    ports:
+      - 8888:8888
+    entrypoint:
+      - start.sh
+      - jupyter
+      - lab
+      - --LabApp.token=''
+      - --ip=0.0.0.0
+      - --no-browser
