@@ -6,6 +6,7 @@ services:
     container_name: comp-neuro
     volumes:
       - ./notebooks:/home/jovyan/work/notebooks
+      - ./data:/home/jovyan/work/data
     ports:
       - 8888:8888
     entrypoint:
